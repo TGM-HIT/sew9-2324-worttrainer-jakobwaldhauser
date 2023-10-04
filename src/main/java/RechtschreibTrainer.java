@@ -28,6 +28,7 @@ public class RechtschreibTrainer {
     public boolean pruefen(String eingabe){
         try{
             if(eingabe.equals(currentWort.getWort())){
+                currentWort = null;
                 return true;
             }
             return false;
