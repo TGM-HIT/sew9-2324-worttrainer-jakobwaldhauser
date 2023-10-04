@@ -1,18 +1,19 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class RechtschreibTrainer {
-    private Wortpaar[] woerter;
+    private ArrayList<Wortpaar> woerter;
     private Wortpaar currentWort;
     private int statistikInsgesamt;
     private int statistikRichtig;
 
-    public RechtschreibTrainer(Wortpaar[] woerter){
+    public RechtschreibTrainer(ArrayList<Wortpaar> woerter){
         this.woerter = woerter;
     }
 
     public void wortAuswaehlen(int index){
         try {
-            currentWort = woerter[index];
+            currentWort = woerter.get(index);
         }catch(Exception e){
 
         }
@@ -20,7 +21,7 @@ public class RechtschreibTrainer {
 
     public void wortAuswaehlen(){
         Random random = new Random();
-        int index = random.nextInt(woerter.length);
+        int index = random.nextInt(woerter.size()-1);
         wortAuswaehlen();
     }
 
