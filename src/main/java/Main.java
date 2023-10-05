@@ -10,6 +10,15 @@ public class Main {
         list1.add(new Wortpaar("Tiger", "https://tiger.com"));
         list1.add(new Wortpaar("Nashorn", "https://nashorn.com"));
 
+        RechtschreibTrainer rt1 = new RechtschreibTrainer(list1);
+
+        rt1.wortAuswaehlen(1);
+        System.out.println(rt1.getCurrentWort().getURL());
+        System.out.println(rt1.pruefen("Hund"));
+        System.out.println(rt1.pruefen("Katze"));
+        rt1.wortAuswaehlen();
+        System.out.println(rt1.pruefen("Hund"));
+        System.out.println("Gesamt: "+rt1.getStatistikInsgesamt()+" Richtig: "+rt1.getStatistikRichtig() + " Falsch: "+rt1.getStatistikFalsch());
 
     }
 }

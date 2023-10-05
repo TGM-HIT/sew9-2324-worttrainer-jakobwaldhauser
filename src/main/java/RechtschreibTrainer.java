@@ -4,8 +4,8 @@ import java.util.Random;
 public class RechtschreibTrainer {
     private ArrayList<Wortpaar> woerter;
     private Wortpaar currentWort;
-    private int statistikInsgesamt;
-    private int statistikRichtig;
+    private int statistikInsgesamt = 0;
+    private int statistikRichtig = 0;
 
     public RechtschreibTrainer(ArrayList<Wortpaar> woerter){
         this.woerter = woerter;
@@ -21,16 +21,19 @@ public class RechtschreibTrainer {
 
     public void wortAuswaehlen(){
         Random random = new Random();
-        int index = random.nextInt(woerter.size()-1);
-        wortAuswaehlen();
+        int index = random.nextInt(woerter.size());
+        wortAuswaehlen(index);
     }
 
     public boolean pruefen(String eingabe){
         try{
             if(eingabe.equals(currentWort.getWort())){
                 currentWort = null;
+                statistikInsgesamt++;
+                statistikRichtig++;
                 return true;
             }
+            statistikInsgesamt++;
             return false;
         }catch(Exception e){
             return false;
@@ -39,5 +42,17 @@ public class RechtschreibTrainer {
 
     public Wortpaar getCurrentWort() {
         return currentWort;
+    }
+
+    public int getStatistikInsgesamt(){
+        return statistikInsgesamt;
+    }
+
+    public int getStatistikRichtig(){
+        return statistikRichtig;
+    }
+
+    public int getStatistikFalsch(){
+        return statistikInsgesamt-statistikRichtig;
     }
 }
