@@ -20,5 +20,7 @@ public class Main {
         System.out.println(rt1.pruefen("Hund"));
         System.out.println("Gesamt: "+rt1.getStatistikInsgesamt()+" Richtig: "+rt1.getStatistikRichtig() + " Falsch: "+rt1.getStatistikFalsch());
 
+        TrainerView tv = new TrainerView();
+
     }
 }
