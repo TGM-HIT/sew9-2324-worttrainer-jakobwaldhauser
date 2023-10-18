@@ -20,7 +20,12 @@ public class Main {
         System.out.println(rt1.pruefen("Hund"));
         System.out.println("Gesamt: "+rt1.getStatistikInsgesamt()+" Richtig: "+rt1.getStatistikRichtig() + " Falsch: "+rt1.getStatistikFalsch());
 
-        TrainerView tv = new TrainerView();
+        //TrainerView tv = new TrainerView();
+        Speichern speichern = new SpeichernJSON();
+        speichern.save("speicherung.json", rt1);
+        RechtschreibTrainer rt2 = speichern.load("speicherung.json");
+        System.out.println("Gesamt: "+rt2.getStatistikInsgesamt()+" Richtig: "+rt2.getStatistikRichtig() + " Falsch: "+rt2.getStatistikFalsch());
+        System.out.println(rt2.getCurrentWort().getURL());
 
     }
 }
