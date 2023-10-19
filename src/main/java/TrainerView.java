@@ -60,7 +60,12 @@ public class TrainerView extends JFrame {
 
     public void setBild(String url){
         try {
-            imageLabel.setIcon(new ImageIcon(new URL(url)));
+            ImageIcon ic = new ImageIcon(new URL(url));
+            Image image = ic.getImage ().getScaledInstance (1200, 800, Image.SCALE_SMOOTH);
+            imageLabel.setIcon(new ImageIcon(image));
+
+
+
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
