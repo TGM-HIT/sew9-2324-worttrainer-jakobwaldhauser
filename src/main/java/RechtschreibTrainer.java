@@ -31,6 +31,7 @@ public class RechtschreibTrainer {
                 currentWort = null;
                 statistikInsgesamt++;
                 statistikRichtig++;
+                wortAuswaehlen();
                 return true;
             }
             statistikInsgesamt++;
