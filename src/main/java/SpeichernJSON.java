@@ -1,5 +1,7 @@
 import java.io.*;
 import java.io.IOException;
+import java.util.ArrayList;
+
 import com.google.gson.*;
 
 public class SpeichernJSON implements Speichern{
@@ -21,7 +23,8 @@ public class SpeichernJSON implements Speichern{
             return gson.fromJson(reader, RechtschreibTrainer.class);
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
+            return new RechtschreibTrainer(new ArrayList<Wortpaar>());
+
         }
     }
 

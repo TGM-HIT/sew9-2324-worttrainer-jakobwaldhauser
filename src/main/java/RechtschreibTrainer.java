@@ -7,6 +7,8 @@ public class RechtschreibTrainer {
     private int statistikInsgesamt = 0;
     private int statistikRichtig = 0;
 
+    private int letzterVersuch = 1;
+
     public RechtschreibTrainer(ArrayList<Wortpaar> woerter){
         this.woerter = woerter;
     }

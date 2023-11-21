@@ -12,7 +12,7 @@ public class Main {
 
         RechtschreibTrainer rt1 = new RechtschreibTrainer(list1);
 
-        rt1.wortAuswaehlen(1);
+        rt1.wortAuswaehlen();
 
 
         //TrainerView tv = new TrainerView();
