@@ -27,6 +27,9 @@ public class TrainerView extends JFrame {
         //MittelPanel (beinhaltet Bild, Letzten Versuch und Statistik)
         JPanel midPanel = new JPanel(new BorderLayout());
 
+        //ButtonPanel
+        JPanel buttonPanel = new JPanel(new BorderLayout());
+
         //Bild
         ImageIcon bild;
         try {
@@ -45,7 +48,13 @@ public class TrainerView extends JFrame {
         JButton submit = new JButton("Abschicken");
         submit.setActionCommand("Überprüfen");
         submit.addActionListener(ac);
-        panel.add(submit, BorderLayout.SOUTH);
+        buttonPanel.add(submit, BorderLayout.CENTER);
+
+        //Beenden Button
+        JButton exit = new JButton("Exit");
+        exit.setActionCommand("exit");
+        exit.addActionListener(ac);
+        buttonPanel.add(exit, BorderLayout.SOUTH);
 
         //letzer Versuch
         lastTry = new JLabel("Letzter Versuch: ");
@@ -56,6 +65,7 @@ public class TrainerView extends JFrame {
         midPanel.add(statistik, BorderLayout.EAST);
 
         panel.add(midPanel,BorderLayout.NORTH);
+        panel.add(buttonPanel, BorderLayout.SOUTH);
         this.add(panel);
         this.setVisible(true);
 
@@ -68,7 +78,7 @@ public class TrainerView extends JFrame {
     public void setBild(String url){
         try {
             ImageIcon ic = new ImageIcon(new URL(url));
-            Image image = ic.getImage ().getScaledInstance (1200, 800, Image.SCALE_SMOOTH);
+            Image image = ic.getImage ().getScaledInstance (1200, 750, Image.SCALE_SMOOTH);
             imageLabel.setIcon(new ImageIcon(image));
 
 

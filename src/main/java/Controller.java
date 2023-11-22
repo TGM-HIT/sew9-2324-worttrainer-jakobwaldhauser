@@ -22,6 +22,10 @@ public class Controller implements ActionListener {
             view.resetEingabe();
             updateView();
         }
+        if(e.getActionCommand().equals("exit")) {
+            speichern.save("speicherung.json",rechtschreibTrainer);
+            System.exit(0);
+        }
     }
 
     /**
