@@ -4,6 +4,9 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+die View des Rechtschreibtrainers
+ */
 public class TrainerView extends JFrame {
     private JLabel imageLabel;
     private JTextField eingabe;
@@ -58,6 +61,10 @@ public class TrainerView extends JFrame {
 
     }
 
+    /**
+    setzt ein neues Bild
+    @param url URL des neuen Bildes
+     */
     public void setBild(String url){
         try {
             ImageIcon ic = new ImageIcon(new URL(url));
@@ -70,6 +77,11 @@ public class TrainerView extends JFrame {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+    setzt den letzten try auf eine von 4 Möglichkeiteb
+    @param status neuer Status des lastTry
+     */
     public void setLastTry(int status){
         switch (status){
             case LAST_TRY_NONE: lastTry.setText("Erster Versuch");
@@ -81,6 +93,13 @@ public class TrainerView extends JFrame {
             default: lastTry.setText("");
         }
     }
+
+    /**
+    setzt eine neue Statistik
+    @param gesamt Anzahl aller Wörter
+    @param richtig Anzahl aller richtigen Wörter
+    @param falsch Anzahl aller falschen Wörter
+     */
     public void setStatistik(int gesamt, int richtig, int falsch){
         statistik.setText("<html>Gesamt: "+gesamt+"<br/>Richtig: "+richtig+"<br/>Falsch: "+falsch+"</html>");
     }
@@ -89,6 +108,9 @@ public class TrainerView extends JFrame {
         return eingabe.getText();
     }
 
+    /**
+    setzt das Eingabefeld wieder auf leer
+     */
     public void resetEingabe() {
         eingabe.setText("");
     }

@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+Ein Rechtschreibtrainer welcher eine Liste an Wortpaaren hat, von dieser kann ein Wortpaar ausgewählt werden und auf richtigkeit überprüft werden
+ */
 public class RechtschreibTrainer {
     private ArrayList<Wortpaar> woerter;
     private Wortpaar currentWort;
@@ -13,6 +16,10 @@ public class RechtschreibTrainer {
         this.woerter = woerter;
     }
 
+    /**
+    wählt ein Wortpaar aus der Liste aus
+    @param index Index des auszuwählendes Wortes
+     */
     public void wortAuswaehlen(int index){
         try {
             currentWort = woerter.get(index);
@@ -21,12 +28,19 @@ public class RechtschreibTrainer {
         }
     }
 
+    /**
+    wählt ein zufälliges Wortpaar aus der Liste aus
+     */
     public void wortAuswaehlen(){
         Random random = new Random();
         int index = random.nextInt(woerter.size());
         wortAuswaehlen(index);
     }
 
+    /**
+    überprüft ob das übergebene Wort dem aktuellen Wortpaar entspricht
+    @param eingabe zu prüfendes Wort
+     */
     public boolean pruefen(String eingabe){
         try{
             if(eingabe.equals(currentWort.getWort())){

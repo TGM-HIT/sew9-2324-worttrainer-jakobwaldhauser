@@ -1,6 +1,9 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Der Controller, welcher das Modell und das View vereint
+ */
 public class Controller implements ActionListener {
     private RechtschreibTrainer rechtschreibTrainer;
     private TrainerView view;
@@ -21,6 +24,9 @@ public class Controller implements ActionListener {
         }
     }
 
+    /**
+     * updated die View mit aktuellen Werten
+     */
     public void updateView() {
         view.setStatistik(rechtschreibTrainer.getStatistikInsgesamt(), rechtschreibTrainer.getStatistikRichtig(), rechtschreibTrainer.getStatistikFalsch());
         view.setBild(rechtschreibTrainer.getCurrentWort().getURL());

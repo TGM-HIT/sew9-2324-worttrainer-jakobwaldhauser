@@ -1,3 +1,6 @@
+/**
+Ein Wortpaar bestehend aus dem Wort und dem dazugehörigen Bild als URL
+ */
 public class Wortpaar {
     private String wort;
     private String url;
