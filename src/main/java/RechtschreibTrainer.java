@@ -48,9 +48,11 @@ public class RechtschreibTrainer {
                 statistikInsgesamt++;
                 statistikRichtig++;
                 wortAuswaehlen();
+                letzterVersuch = 2;
                 return true;
             }
             statistikInsgesamt++;
+            letzterVersuch =3;
             return false;
         }catch(Exception e){
             return false;
@@ -72,4 +74,6 @@ public class RechtschreibTrainer {
     public int getStatistikFalsch(){
         return statistikInsgesamt-statistikRichtig;
     }
+
+    public int getLetzterVersuch() {return letzterVersuch;}
 }

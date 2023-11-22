@@ -34,6 +34,7 @@ public class Controller implements ActionListener {
     public void updateView() {
         view.setStatistik(rechtschreibTrainer.getStatistikInsgesamt(), rechtschreibTrainer.getStatistikRichtig(), rechtschreibTrainer.getStatistikFalsch());
         view.setBild(rechtschreibTrainer.getCurrentWort().getURL());
+        view.setLastTry(rechtschreibTrainer.getLetzterVersuch());
     }
 
     public static void main(String[] args){
