@@ -15,6 +15,12 @@ public class Controller implements ActionListener {
         updateView();
 
     }
+
+    /**
+     * Reagiert auf Benutzeraktionen aus der Benutzeroberfläche.
+     *
+     * @param e Das ausgelöste ActionEvent-Objekt.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("Überprüfen")) {

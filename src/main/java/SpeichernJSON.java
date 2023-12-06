@@ -24,7 +24,7 @@ public class SpeichernJSON implements Speichern{
     /**
      * Diese Methode lädt ein RechtschreibTrainer-Objekt aus einer JSON-Datei.
      * @param file Der Dateiname, aus dem das Objekt geladen werden soll.
-     * @return Das geladene RechtschreibTrainer-Objekt oder ein neues leeres Objekt, wenn ein Fehler auftritt.
+     * @return Das geladene RechtschreibTrainer-Objekt oder loadStadard() wenn ein Fehler auftritt
      */
     @Override
     public RechtschreibTrainer load(String file) {
@@ -37,6 +37,10 @@ public class SpeichernJSON implements Speichern{
         }
     }
 
+    /**
+     * Diese Methode lädt ein Standard RechtschreibTrainer-Objekt mit Beispiel Wörtern.
+     * @return Das geladene RechtschreibTrainer-Objekt.
+     */
     public RechtschreibTrainer loadStandard(){
         ArrayList<Wortpaar> list1 = new ArrayList<>();
         list1.add(new Wortpaar("Hund", "https://th.bing.com/th/id/R.542611eacb5c3972de6a1fecc74de38b?rik=ycZGLnItV7s%2bAQ&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fJgYQiAp.jpg&ehk=fFlqdbVQY9ouK0xw%2bBZMS3nGESR1GRHJOcL1c4M0t5M%3d&risl=&pid=ImgRaw&r=0"));
